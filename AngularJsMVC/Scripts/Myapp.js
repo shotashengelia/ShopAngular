@@ -59,13 +59,14 @@ app.controller("Myapp", function myfunction($scope, $http) {
                 }
             });
     }
+    $scope.categories = [{name:"vaa"}];
 
     $scope.GetCategory = function () {
 
         $scope.getcategory=[];
 
         $http.post("/Home/GetCategories").then(function (response) {
-            if (response.data.success) {
+            if (response.status == 200) {
                 $scope.categories = response.data
                 console.log(response.data);
             }
