@@ -67,10 +67,10 @@ app.controller("Myapp", function myfunction($scope, $http) {
         $http.post("/Home/GetCategories").then(function (response) {
             if (response.data.success) {
                 $scope.categories = response.data
-                console.log();
+                console.log(response.data);
             }
             else {
-                console.log();
+                console.log(response.data);
             }
         })
     }
