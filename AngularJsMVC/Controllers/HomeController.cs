@@ -87,7 +87,7 @@ namespace AngularJsMVC.Controllers
         }
 
         [HttpPost]
-        public ActionResult GetCategories() 
+        public JsonResult GetCategories() 
         {
             
             List<Category> Ct = db.Categories.ToList();
