@@ -64,9 +64,9 @@ app.controller("Myapp", function myfunction($scope, $http) {
 
         $scope.getcategory=[];
 
-        $http.post("/Home/GetCategory").then(function (response) {
+        $http.post("/Home/GetCategories").then(function (response) {
             if (response.data.success) {
-                $scope.getcategory = response.data
+                $scope.categories = response.data
             }
         })
     }

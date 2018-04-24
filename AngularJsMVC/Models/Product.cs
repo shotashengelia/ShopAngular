@@ -11,6 +11,8 @@ namespace AngularJsMVC.Models
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations.Schema;
+    using System.Web.Script.Serialization;
     
     public partial class Product
     {
@@ -19,7 +21,8 @@ namespace AngularJsMVC.Models
         public int price { get; set; }
         public int amount { get; set; }
         public int categoryId { get; set; }
-    
-        public virtual Category Category { get; set; }
+
+        [ForeignKey("categoryId"), ScriptIgnore]
+        public Category Category { get; set; }
     }
 }
