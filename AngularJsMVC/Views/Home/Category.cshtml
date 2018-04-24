@@ -1,0 +1,54 @@
+﻿@{
+    ViewBag.Title = "Category";
+    Layout = "~/Views/Shared/MyLayout.cshtml";
+}
+<link href="~/Content/Pages.css" rel="stylesheet" />
+<div class="Form" ng-app="Myapp" ng-controller="Myapp">
+    <h3>კატეგორიის დამატება</h3>
+    <div class="MyForm">
+
+        <label for="Cname">კატეგორიის სახელი</label>
+        <input type="text" id="Cname" ng-model="ProductModel.CategoryName" name="CategoryName" placeholder="შეიყვენეთ კატეგორიის სახელი..">
+
+        <input type="submit" value="დამატება" ng-click="SaveCategory()">
+
+    </div>
+
+
+
+    <div ng-init="GetCategory()" class="divList">
+        <p class="divHead">List of Category</p>
+        <table cellpadding="12" class="table table-bordered table-hover">
+            <tr>
+                <td>
+                    <b>Name</b>
+                </td>
+            </tr>
+            <tr ng-repeat="cat in getcategory">
+                <td>
+                    {{cat.Name}}
+                </td>
+                </tr>
+        </table>
+    </div>
+
+    </div>
+                @* <div ng-app="foo">
+                        <!-- Set up controllers etc, and then: -->
+                        <div ng-controller="Myapp">
+                            <ul ng-repeat="item in getcategory">
+                                <li>{{item.categoryname}}</li>
+                            </ul>
+                        </div>
+                    </div> *@
+
+
+
+                @*<script>
+                        angular.module('foo', ['ngAnimate']);
+                        app.controller("myapp", function myfunction($scope, $http) {
+                            $http.post("/Home/Category", { categoryname: $scope.ProductModel.CategoryName })
+                            $scope.category = ProductModel.CategoryName;
+                            });
+
+                    </script>*@

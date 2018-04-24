@@ -1,0 +1,25 @@
+﻿@{
+    ViewBag.Title = "Product";
+    Layout = "~/Views/Shared/MyLayout.cshtml";
+}
+<link href="~/Content/Pages.css" rel="stylesheet" />
+<div class="Form" ng-app="Myapp" ng-controller="Myapp">
+    <h3>პროდუქტის დამატება</h3>
+    <div class="MyForm">
+        <label for="Pname">პროდუქტის სახელი</label>
+        <input type="text" ng-model="ProductModel.Name" id="Pname" name="ProductName" placeholder="შეიყვენეთ პროდუქტის სახელი..">
+
+        <label for="Price">ფასი</label>
+        <input type="number" ng-model="ProductModel.Price" id="Price" name="ProductPrice" placeholder="შეიყვენეთ ფასი..">
+
+        <label for="Amount">რაოდენობა</label>
+        <input type="number" ng-model="ProductModel.Amount" id="Amount" name="Amount" placeholder="შეიყვანეთ რაოდენობა..">
+
+
+        <label for="Category">პროდუქტი</label>
+        @Html.DropDownList("CategoryId", new SelectList(ViewBag.GetCategory, "id", "name"), new { ng_model = "ProductModel.CategoryId" })
+
+        <input type="submit" ng-click="SaveProduct()" value="დამატება">
+    </div>
+</div>
+

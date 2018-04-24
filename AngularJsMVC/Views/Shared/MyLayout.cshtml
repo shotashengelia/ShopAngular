@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/Main.css" rel="stylesheet" />
+    <script src="~/Scripts/angular.min.js"></script>
+    <script src="~/Scripts/angular-animate.min.js"></script>
+    <script src="~/Scripts/Myapp.js"></script>
+</head>
+<body>
+
+    <div class="topnav">
+        <a href="/Home/Product">პროდუქტი</a>
+        <a href="/Home/Category">კეტეგორია</a>
+        
+    </div>
+    <div>
+        @RenderBody()
+    </div>
+</body>
+</html>
